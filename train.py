@@ -116,7 +116,7 @@ def cat_dog_trainer(args):
             if phase == 'val' and epoch_acc > best_acc and epoch > 0:
                 best_acc = epoch_acc
                 print('Saving model..')
-                torch.save(model.state_dict(), os.path.join(args.save_dir, './model_{}.pth'.format(epoch + 1)))
+                torch.save(model.state_dict(), os.path.join(args.save_dir, './model_{}.pth'.format(epoch)))
                 indicator = 1
         print('  =>  Check point' + '-' * 40)
 
