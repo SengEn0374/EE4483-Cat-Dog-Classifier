@@ -1,0 +1,5 @@
+tensorboard
+tensorboardx
+torch
+torchvision
+cudatoolkit==10.2
