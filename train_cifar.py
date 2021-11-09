@@ -8,6 +8,8 @@ import numpy as np
 import argparse
 import os
 import time
+import torchvision
+from torchvision import transforms
 from dataset.dataset import MyCustomDataset
 from model.resnet18 import res18
 
@@ -16,10 +18,8 @@ def cat_dog_trainer(args):
     since_time = time.time()
     best_acc = 0
     indicator = 0
-    log_dir_train = os.path.join('./runs', args.save_dir.split('/')[-1]+"_train")
-    log_dir_val = os.path.join('./runs', args.save_dir.split('/')[-1]+"_val")
-    writer_train = SummaryWriter(log_dir_train)
-    writer_val = SummaryWriter(log_dir_val)
+    log_dir = os.path.join('./runs', args.save_dir.split('/')[-1])
+    writer = SummaryWriter(log_dir)
 
     if torch.cuda.is_available():
         gpu_id = int(args.device)
@@ -31,16 +31,31 @@ def cat_dog_trainer(args):
         raise Exception("gpu is not available")
 
     # set dataset
-    datasets = {x: MyCustomDataset(args.data_dir,
-                                   (args.img_size, args.img_size),
-                                   x)
-                for x in ['train', 'val']}
-    data_loader = {x: DataLoader(datasets[x],
-                                 batch_size=32,
-                                 shuffle=(True if x == 'train' else False),
-                                 num_workers=4,
-                                 pin_memory=(True if x == 'train' else False), drop_last=True)
-                   for x in ['train', 'val']}
+    if args.dset == "cat_dog":
+        datasets = {x: MyCustomDataset(args.data_dir,
+                                       (args.img_size, args.img_size),
+                                       x)
+                    for x in ['train', 'val']}
+        data_loader = {x: DataLoader(datasets[x],
+                                     batch_size=32,
+                                     shuffle=(True if x == 'train' else False),
+                                     num_workers=4,
+                                     pin_memory=(True if x == 'train' else False), drop_last=True)
+                       for x in ['train', 'val']}
+
+    elif args.dset == "cifar-10":
+        transform_train = transforms.Compose(
+            [transforms.RandomHorizontalFlip(),
+             transforms.ToTensor(),
+             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+        transform = transforms.Compose(
+            [transforms.ToTensor(),
+             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+
+        trainset = torchvision.datasets.CIFAR10(root='../cifar-10', train=True, download=True, transform=transform_train)
+        testset = torchvision.datasets.CIFAR10(root='../cifar-10', train=False, download=True, transform=transform)
+        trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=2)
+        testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, num_workers=2)
 
 
     model = res18()
@@ -108,12 +123,8 @@ def cat_dog_trainer(args):
             epoch_acc = running_corrects / datasets[phase].__len__()
 
             # plot to tensorboard for training progress
-            if phase == 'train':
-                writer_train.add_scalar('/loss', epoch_loss, epoch)
-                writer_train.add_scalar('/acc', epoch_acc, epoch)
-            if phase == 'val':
-                writer_val.add_scalar('/loss', epoch_loss, epoch)
-                writer_val.add_scalar('/acc', epoch_acc, epoch)
+            writer.add_scalar(phase + '/loss', epoch_loss, epoch)
+            writer.add_scalar(phase + '/acc', epoch_acc, epoch)
 
             # print epoch stats
             epoch_time = time.time() - start
@@ -141,17 +152,19 @@ def cat_dog_trainer(args):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train')
-    parser.add_argument('--save_dir', default='./checkpoints/squish_5e-4', help='directory to save models.')
+    parser.add_argument('--save_dir', default='./checkpoints/cifar-10', help='directory to save models.')
     parser.add_argument('--data_dir', default='C:/Users/crono/Desktop/datasets', help='training data directory')
+
     parser.add_argument('--img_size', default=256, type=int, help='input image size (square)')
 
-    parser.add_argument('--lr', type=float, default=0.0005, help='the initial learning rate')
+    parser.add_argument('--lr', type=float, default=0.001, help='the initial learning rate')
     parser.add_argument('--momentum', type=float, default= 0.9, help='sgd momentum')
-
-    parser.add_argument('--resume', default='', help='the path of resume training model')
-
+    # parser.add_argument('--weight_decay', type=float, default=1e-5, help='the weight decay')
+    parser.add_argument('--resume', default='',help='the path of resume training model')
     parser.add_argument('--max_epoch', type=int, default=25, help='max training epoch')
-    parser.add_argument('--batch_size', type=int, default=64, help='train batch size')
+    # parser.add_argument('--val_epoch', type=int, default=1, help='the num of steps to log training information')
+    # parser.add_argument('--val_start', type=int, default=0, help='the epoch start to val')
+    parser.add_argument('--batch_size', type=int, default=32, help='train batch size')
     parser.add_argument('--device', default='0', help='assign device')
     parser.add_argument('--num_workers', type=int, default=4, help='the num of training process')
 
@@ -162,7 +175,6 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     os.makedirs(args.save_dir, exist_ok=True)
-    # torch.backends.cudnn.benchmark = True
     os.environ['CUDA_VISIBLE_DEVICES'] = args.device.strip()  # set vis gpu
     trainer = cat_dog_trainer(args)
 

@@ -1,0 +1,194 @@
+sgd 1e-3 momentum 9
+25 epochs
+
+image augmentations:
+squish resize 256x256
+random flip
+
+
+Microsoft Windows [Version 10.0.19043.1288]
+(c) Microsoft Corporation. All rights reserved.
+
+(py37) C:\Users\crono\Desktop\Resnet18_defect_classifier>python train.py
+Epoch 0/24
+----------
+train Loss: 0.0022145872935652733       Acc: 0.9737
+time elapsed: 92.26 sec
+val Loss: 0.000933282426558435  Acc: 0.9892
+time elapsed: 112.12 sec
+  =>  Check point----------------------------------------
+Epoch 1/24
+----------
+train Loss: 0.001002324977889657        Acc: 0.9882
+time elapsed: 88.65 sec
+val Loss: 0.0008012939360924065         Acc: 0.9912
+time elapsed: 103.01 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 2/24
+----------
+train Loss: 0.0006854640669189394       Acc: 0.99305
+time elapsed: 88.49 sec
+val Loss: 0.0007242062711156905         Acc: 0.9924
+time elapsed: 104.46 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 3/24
+----------
+train Loss: 0.0005102266441099346       Acc: 0.99445
+time elapsed: 88.66 sec
+val Loss: 0.0007875727606005967         Acc: 0.9918
+time elapsed: 103.13 sec
+  =>  Check point----------------------------------------
+Epoch 4/24
+----------
+train Loss: 0.0004352580872364342       Acc: 0.99525
+time elapsed: 88.61 sec
+val Loss: 0.0008074375218711793         Acc: 0.9914
+time elapsed: 102.97 sec
+  =>  Check point----------------------------------------
+Epoch 5/24
+----------
+train Loss: 0.0003533479757606983       Acc: 0.9965
+time elapsed: 88.79 sec
+val Loss: 0.0007412293925881386         Acc: 0.9924
+time elapsed: 103.26 sec
+  =>  Check point----------------------------------------
+Epoch 6/24
+----------
+train Loss: 0.00022285761951934546      Acc: 0.9976
+time elapsed: 89.16 sec
+val Loss: 0.0007518551428802311         Acc: 0.9922
+time elapsed: 103.68 sec
+  =>  Check point----------------------------------------
+Epoch 7/24
+----------
+train Loss: 0.00018553723930381238      Acc: 0.99815
+time elapsed: 90.93 sec
+val Loss: 0.0007767759379930794         Acc: 0.9922
+time elapsed: 106.15 sec
+  =>  Check point----------------------------------------
+Epoch 8/24
+----------
+train Loss: 0.0001781081809895113       Acc: 0.99825
+time elapsed: 91.39 sec
+val Loss: 0.0007600374519824982         Acc: 0.992
+time elapsed: 106.34 sec
+  =>  Check point----------------------------------------
+Epoch 9/24
+----------
+train Loss: 0.00014493754133582115      Acc: 0.99865
+time elapsed: 89.67 sec
+val Loss: 0.0007634364301338792         Acc: 0.994
+time elapsed: 104.49 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 10/24
+----------
+train Loss: 0.00012985947250854224      Acc: 0.9986
+time elapsed: 88.70 sec
+val Loss: 0.0007177453371696174         Acc: 0.9936
+time elapsed: 103.16 sec
+  =>  Check point----------------------------------------
+Epoch 11/24
+----------
+train Loss: 0.00011771445133490488      Acc: 0.99905
+time elapsed: 88.71 sec
+val Loss: 0.0008097098325379193         Acc: 0.992
+time elapsed: 103.33 sec
+  =>  Check point----------------------------------------
+Epoch 12/24
+----------
+train Loss: 0.00011913089110748842      Acc: 0.99875
+time elapsed: 88.50 sec
+val Loss: 0.0008340675267390907         Acc: 0.9932
+time elapsed: 103.12 sec
+  =>  Check point----------------------------------------
+Epoch 13/24
+----------
+train Loss: 8.643574983580038e-05       Acc: 0.9992
+time elapsed: 91.25 sec
+val Loss: 0.0007680344278924167         Acc: 0.9934
+time elapsed: 105.61 sec
+  =>  Check point----------------------------------------
+Epoch 14/24
+----------
+train Loss: 7.008270767983049e-05       Acc: 0.9994
+time elapsed: 88.45 sec
+val Loss: 0.0008789574494585395         Acc: 0.9932
+time elapsed: 102.90 sec
+  =>  Check point----------------------------------------
+Epoch 15/24
+----------
+train Loss: 6.240353104658425e-05       Acc: 0.99945
+time elapsed: 88.49 sec
+val Loss: 0.0008962940773926675         Acc: 0.9918
+time elapsed: 103.20 sec
+  =>  Check point----------------------------------------
+Epoch 16/24
+----------
+train Loss: 5.578333730227314e-05       Acc: 0.9995
+time elapsed: 88.84 sec
+val Loss: 0.0007718653650954366         Acc: 0.9936
+time elapsed: 103.69 sec
+  =>  Check point----------------------------------------
+Epoch 17/24
+----------
+train Loss: 5.847560169058852e-05       Acc: 0.99945
+time elapsed: 88.61 sec
+val Loss: 0.000762495503295213  Acc: 0.9938
+time elapsed: 103.30 sec
+  =>  Check point----------------------------------------
+Epoch 18/24
+----------
+train Loss: 6.26494365860708e-05        Acc: 0.9994
+time elapsed: 88.69 sec
+val Loss: 0.0008984733140096068         Acc: 0.9926
+time elapsed: 103.23 sec
+  =>  Check point----------------------------------------
+Epoch 19/24
+----------
+train Loss: 5.5440985306631774e-05      Acc: 0.99945
+time elapsed: 88.62 sec
+val Loss: 0.0009887793567031622         Acc: 0.9924
+time elapsed: 102.97 sec
+  =>  Check point----------------------------------------
+Epoch 20/24
+----------
+train Loss: 6.185136589920148e-05       Acc: 0.99925
+time elapsed: 89.18 sec
+val Loss: 0.0010327064665034413         Acc: 0.9924
+time elapsed: 103.48 sec
+  =>  Check point----------------------------------------
+Epoch 21/24
+----------
+train Loss: 3.2240775908576325e-05      Acc: 0.9998
+time elapsed: 88.38 sec
+val Loss: 0.0008573785307817161         Acc: 0.9932
+time elapsed: 103.53 sec
+  =>  Check point----------------------------------------
+Epoch 22/24
+----------
+train Loss: 3.106324220425449e-05       Acc: 0.99975
+time elapsed: 88.49 sec
+val Loss: 0.0008868587319739163         Acc: 0.9938
+time elapsed: 102.91 sec
+  =>  Check point----------------------------------------
+Epoch 23/24
+----------
+train Loss: 2.5297340471297503e-05      Acc: 0.9999
+time elapsed: 88.53 sec
+val Loss: 0.000929868605453521  Acc: 0.9932
+time elapsed: 103.31 sec
+  =>  Check point----------------------------------------
+Epoch 24/24
+----------
+train Loss: 2.4698591005289927e-05      Acc: 0.9999
+time elapsed: 88.48 sec
+val Loss: 0.0009801097912713885         Acc: 0.9926
+time elapsed: 102.92 sec
+  =>  Check point----------------------------------------
+Training complete in 43m 20s
+Best val Acc: 0.994000
+
+(py37) C:\Users\crono\Desktop\Resnet18_defect_classifier>

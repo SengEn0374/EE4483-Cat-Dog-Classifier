@@ -1,0 +1,171 @@
+sgd 1e-3 momentum 9
+25 epochs
+
+image augmentations:
+square pad
+resize
+random flip
+
+
+C:\Users\crono\anaconda3\envs\catdog\python.exe C:/Users/crono/Desktop/cat_dog/train.py
+Use GPU: 0 for training
+Epoch 0/24-----------------------------------------------
+train Loss: 0.002423627069219947 	Acc: 0.9682
+time elapsed: 89.23 sec
+val Loss: 0.0010134922340512276 	Acc: 0.9868
+time elapsed: 103.41 sec
+  =>  Check point----------------------------------------
+Epoch 1/24-----------------------------------------------
+train Loss: 0.001172013464383781 	Acc: 0.98575
+time elapsed: 88.37 sec
+val Loss: 0.0008588814525865018 	Acc: 0.9884
+time elapsed: 102.66 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 2/24-----------------------------------------------
+train Loss: 0.000752860854845494 	Acc: 0.99065
+time elapsed: 89.83 sec
+val Loss: 0.0008779886993579566 	Acc: 0.9892
+time elapsed: 104.73 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 3/24-----------------------------------------------
+train Loss: 0.0005192691460251808 	Acc: 0.99405
+time elapsed: 89.55 sec
+val Loss: 0.0008114067604765296 	Acc: 0.9894
+time elapsed: 103.65 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 4/24-----------------------------------------------
+train Loss: 0.0003972356498707086 	Acc: 0.99555
+time elapsed: 88.24 sec
+val Loss: 0.0008109575137495995 	Acc: 0.99
+time elapsed: 102.31 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 5/24-----------------------------------------------
+train Loss: 0.0002580232685431838 	Acc: 0.9975
+time elapsed: 89.26 sec
+val Loss: 0.0008394718752242625 	Acc: 0.9904
+time elapsed: 103.58 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 6/24-----------------------------------------------
+train Loss: 0.00023302785120904446 	Acc: 0.9975
+time elapsed: 89.76 sec
+val Loss: 0.0009652918670326471 	Acc: 0.9874
+time elapsed: 104.77 sec
+  =>  Check point----------------------------------------
+Epoch 7/24-----------------------------------------------
+train Loss: 0.00023236431297846138 	Acc: 0.99775
+time elapsed: 88.93 sec
+val Loss: 0.0010699596023187041 	Acc: 0.9894
+time elapsed: 103.24 sec
+  =>  Check point----------------------------------------
+Epoch 8/24-----------------------------------------------
+train Loss: 0.0001696235704002902 	Acc: 0.9981
+time elapsed: 88.90 sec
+val Loss: 0.0008821052615530789 	Acc: 0.9892
+time elapsed: 103.58 sec
+  =>  Check point----------------------------------------
+Epoch 9/24-----------------------------------------------
+train Loss: 0.00016564085672143847 	Acc: 0.99855
+time elapsed: 89.50 sec
+val Loss: 0.0008662313921377063 	Acc: 0.9896
+time elapsed: 104.10 sec
+  =>  Check point----------------------------------------
+Epoch 10/24-----------------------------------------------
+train Loss: 0.0001449584378860891 	Acc: 0.99865
+time elapsed: 89.68 sec
+val Loss: 0.0008409812580794096 	Acc: 0.99
+time elapsed: 104.86 sec
+  =>  Check point----------------------------------------
+Epoch 11/24-----------------------------------------------
+train Loss: 7.246995664900169e-05 	Acc: 0.99965
+time elapsed: 89.68 sec
+val Loss: 0.000982208177447319 	Acc: 0.9898
+time elapsed: 104.13 sec
+  =>  Check point----------------------------------------
+Epoch 12/24-----------------------------------------------
+train Loss: 8.708873792784289e-05 	Acc: 0.99915
+time elapsed: 88.21 sec
+val Loss: 0.0009164437069557607 	Acc: 0.9908
+time elapsed: 102.29 sec
+Saving model..
+  =>  Check point----------------------------------------
+Epoch 13/24-----------------------------------------------
+train Loss: 0.0001141955581260845 	Acc: 0.99905
+time elapsed: 88.21 sec
+val Loss: 0.0016535506583750248 	Acc: 0.985
+time elapsed: 102.51 sec
+  =>  Check point----------------------------------------
+Epoch 14/24-----------------------------------------------
+train Loss: 0.000124820347991772 	Acc: 0.9989
+time elapsed: 88.17 sec
+val Loss: 0.0010093811433762312 	Acc: 0.99
+time elapsed: 102.44 sec
+  =>  Check point----------------------------------------
+Epoch 15/24-----------------------------------------------
+train Loss: 8.455590432276949e-05 	Acc: 0.99935
+time elapsed: 88.24 sec
+val Loss: 0.0011145594762638211 	Acc: 0.9884
+time elapsed: 102.24 sec
+  =>  Check point----------------------------------------
+Epoch 16/24-----------------------------------------------
+train Loss: 6.107868830440566e-05 	Acc: 0.9995
+time elapsed: 90.27 sec
+val Loss: 0.0009753606282174587 	Acc: 0.9904
+time elapsed: 106.56 sec
+  =>  Check point----------------------------------------
+Epoch 17/24-----------------------------------------------
+train Loss: 0.0001161298860097304 	Acc: 0.999
+time elapsed: 93.26 sec
+val Loss: 0.0011373459128662944 	Acc: 0.9878
+time elapsed: 107.60 sec
+  =>  Check point----------------------------------------
+Epoch 18/24-----------------------------------------------
+train Loss: 8.180375152733177e-05 	Acc: 0.99935
+time elapsed: 89.47 sec
+val Loss: 0.000957238080445677 	Acc: 0.9898
+time elapsed: 103.92 sec
+  =>  Check point----------------------------------------
+Epoch 19/24-----------------------------------------------
+train Loss: 5.9728798078140244e-05 	Acc: 0.9994
+time elapsed: 90.77 sec
+val Loss: 0.001372458296827972 	Acc: 0.986
+time elapsed: 106.04 sec
+  =>  Check point----------------------------------------
+Epoch 20/24-----------------------------------------------
+train Loss: 4.175415961071849e-05 	Acc: 0.9996
+time elapsed: 89.62 sec
+val Loss: 0.0010420619510114193 	Acc: 0.9888
+time elapsed: 104.66 sec
+  =>  Check point----------------------------------------
+Epoch 21/24-----------------------------------------------
+train Loss: 2.1587924493360333e-05 	Acc: 0.9999
+time elapsed: 89.92 sec
+val Loss: 0.0010608817683532834 	Acc: 0.9888
+time elapsed: 105.44 sec
+  =>  Check point----------------------------------------
+Epoch 22/24-----------------------------------------------
+train Loss: 3.6948302295058966e-05 	Acc: 0.9996
+time elapsed: 89.01 sec
+val Loss: 0.0009310033638030291 	Acc: 0.9906
+time elapsed: 104.23 sec
+  =>  Check point----------------------------------------
+Epoch 23/24-----------------------------------------------
+train Loss: 2.4972150640678592e-05 	Acc: 0.9998
+time elapsed: 89.77 sec
+val Loss: 0.0011512819910421968 	Acc: 0.9884
+time elapsed: 104.20 sec
+  =>  Check point----------------------------------------
+Epoch 24/24-----------------------------------------------
+train Loss: 3.7398491258500144e-05 	Acc: 0.9996
+time elapsed: 89.86 sec
+val Loss: 0.0010022922651842237 	Acc: 0.9892
+time elapsed: 104.87 sec
+  =>  Check point----------------------------------------
+Training complete in 43m 23s
+Best val Acc: 0.990800
+
+Process finished with exit code 0

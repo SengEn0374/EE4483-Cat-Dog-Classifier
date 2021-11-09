@@ -1,0 +1,27 @@
+Testing results (manual validation with eye)
+
+---------------------------------------------------
+no resize (no idea why network took it fine..)
+
+false postive cats (actually dogs):
+49
+454
+495
+
+false postive dogs (actually cats):
+159
+348
+
+acc = 495/500 = 99%
+
+---------------------------------------------------
+resize to (256,256)
+
+false postive cats (actually dogs):
+49
+143
+
+false positive dogs
+-
+
+acc = 498/500 = 99.6%

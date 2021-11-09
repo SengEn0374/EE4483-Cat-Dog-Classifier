@@ -2,4 +2,4 @@ tensorboard
 tensorboardx
 torch
 torchvision
-cudatoolkit==10.2
+cudatoolkit==10.2.89
