@@ -1,0 +1,9 @@
+learning rate: 0.001
+momentum: 0.9
+batch size: 64
+Epoch: 0/49
+train Loss: 0.001314492430537939 	Acc: 0.96635
+
+val Loss: 0.0004897267208434641 	Acc: 0.9872
+
+Epoch: 1/49

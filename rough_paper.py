@@ -20,5 +20,15 @@ class SquarePad:
         return F.pad(image, padding, 0, 'constant')
 
 img = Image.open('../datasets/train/dog/dog.5.jpg')
-img = SquarePad.__call__(SquarePad(), img)
-print(img.show())
+# img = SquarePad.__call__(SquarePad(), img)
+# print(img.show())
+
+
+img_transform = transforms.Compose([
+    transforms.RandomRotation(30, expand=True),  ##
+    SquarePad(),
+    transforms.Resize((256,256)),
+    transforms.RandomHorizontalFlip(),
+])
+img = img_transform(img)
+img.show()

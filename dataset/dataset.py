@@ -1,3 +1,6 @@
+'''
+catdog custom datasets for dataloader
+'''
 from torch.utils.data.dataset import Dataset
 from torchvision import transforms
 import torchvision.transforms.functional as F
@@ -15,6 +18,7 @@ class MyCustomDataset(Dataset):
             self.img_transform = transforms.Compose([
                 # SquarePad(),
                 transforms.Resize(self.image_size),
+                # transforms.RandomRotation(30),
                 transforms.RandomHorizontalFlip(),
                 transforms.ToTensor(),
                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # use imgnet std mean
@@ -58,14 +62,19 @@ if __name__ == "__main__":
     from torch.utils.data import DataLoader
 
     data_dir = '../../datasets'
-    # dataset = MyCustomDataset(data_dir)
-    data_loader ={x: DataLoader(dataset,
-                                batch_size=32,
-                                shuffle=(True if x == 'train' else False),
-                                num_workers=2,
-                                pin_memory=(True if x == 'train' else False), drop_last=True)
-                    for x in ['train', 'val']}
-    for data in data_loader['train']:
-        print(data[1])
+    datasets = {x: MyCustomDataset(data_dir,
+                                   (256,256),
+                                   x)
+                for x in ['train', 'val']}
+    data_loader = {x: DataLoader(datasets[x],
+                                 batch_size=1,
+                                 shuffle=(True if x == 'train' else False),
+                                 num_workers=1,
+                                 pin_memory=(True if x == 'train' else False), drop_last=True)
+                   for x in ['train', 'val']}
+    print(len(data_loader['train']))  # 20000, passed
+    print(len(data_loader['val']))    # 5000, passed
+    # for data in data_loader['val']:
+    #     print(data[1])
 
 
