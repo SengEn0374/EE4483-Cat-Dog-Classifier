@@ -1,7 +1,9 @@
 tensorboard==2.6.0
 tensorboardx==2.2
-pillow==8.4.0
+pillow==9.0.0
 -f https://download.pytorch.org/whl/cu102/torch_stable.html
 torch==1.10.0+cu102
 -f https://download.pytorch.org/whl/cu102/torch_stable.html
 torchvision==0.11.1+cu102
+
+# previously using pillow 8.4.0 flagged with security vulnerability. Upgraded to 9.0.0 patch, repo not tested, use at your own discretionl.
